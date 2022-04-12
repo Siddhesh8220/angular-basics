@@ -25,8 +25,12 @@ import { CoursesService } from './courses.service';
     <div (click)="onDivClick()">
       <button (click)="onSubmit($event)">Event Binding</button>
       <div></div>
-    </div> `,
-}) //decorator function (adds metadata to make it component)
+    </div>
+    <!--event-filtering & template variables-->
+    <input #email (keyup.enter)="onKeyUp(email.value)" /><br />
+    <!--ngModel-->
+    <input [(ngModel)]="password" (keyup.enter)="onKeyUpPass()" />`,
+})
 export class CoursesComponenet {
   title = 'list of courses';
   courses = ['course1', 'course2', 'course3'];
@@ -35,6 +39,7 @@ export class CoursesComponenet {
     'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/240px-Angular_full_color_logo.svg.png';
   colSpan = 2;
   isActive = true;
+  password = 'two way bind';
 
   /* 
   Logic for calling an HTTP service
@@ -60,6 +65,14 @@ export class CoursesComponenet {
   onDivClick() {
     console.log('event bubbling happened');
   }
+
+  onKeyUp(email?: any) {
+    console.log('Enter key is pressed  & ' + 'email is: ' + email);
+  }
+
+  onKeyUpPass(email?: any) {
+    console.log(this.password);
+  }
 }
 
 /* 
@@ -71,4 +84,5 @@ Notes:
 5. directive that modifies structure of dom add ex-*ngFor
 6. by using ` we can write multiple line html 
 7. DOM style object proporties: https://www.w3schools.com/jsref/dom_obj_style.asp
+8. @Component add metadata to class to make it a component
 */
