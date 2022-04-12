@@ -4,6 +4,8 @@ import { CoursesService } from './courses.service';
 @Component({
   selector: 'courses', //uses css selector
   template: `<h2>{{ title }}</h2>
+    <h2>{{ currentPrice | currency: 'AUD':true:'2.2-2' }}</h2>
+    <h4>Custom Pipe: {{ summaryText | summary }}</h4>
     <ul>
       <li *ngFor="let course of courselist">{{ course }}</li>
       <!-- property binding works one way -->
@@ -40,6 +42,9 @@ export class CoursesComponenet {
   colSpan = 2;
   isActive = true;
   password = 'two way bind';
+  currentPrice = 2.56896;
+  summaryText =
+    'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, Lorem ipsum dolor sit amet, comes from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from sde Finibus Bonorum et Malorum by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.';
 
   /* 
   Logic for calling an HTTP service
@@ -85,4 +90,7 @@ Notes:
 6. by using ` we can write multiple line html 
 7. DOM style object proporties: https://www.w3schools.com/jsref/dom_obj_style.asp
 8. @Component add metadata to class to make it a component
+9. learn more about pipes in angular documentation
+10. # is used to declare template variables
+11. ngModel is two way binding
 */

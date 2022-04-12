@@ -6,10 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoursesComponenet } from './courses.component';
 import { CoursesService } from './courses.service';
+import { SummaryPipe } from './summary.pipe';
 import { TestComponent } from './test/test.component';
 
 @NgModule({
-  declarations: [AppComponent, CoursesComponenet, TestComponent], // all components that are part of this module
+  declarations: [AppComponent, CoursesComponenet, TestComponent, SummaryPipe], // all components that are part of this module
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [CoursesService],
   bootstrap: [AppComponent],
