@@ -3,7 +3,7 @@ import { CoursesService } from './courses.service';
 
 @Component({
   selector: 'courses', //uses css selector
-  template: `<h2>{{ title }}</h2>
+  template: `<h2>{{ title | titlecase }}</h2>
     <h2>{{ currentPrice | currency: 'AUD':true:'2.2-2' }}</h2>
     <h4>Custom Pipe: {{ summaryText | summary }}</h4>
     <ul>
@@ -34,7 +34,7 @@ import { CoursesService } from './courses.service';
     <input [(ngModel)]="password" (keyup.enter)="onKeyUpPass()" />`,
 })
 export class CoursesComponenet {
-  title = 'list of courses';
+  title = 'the rise of the planets of the apes';
   courses = ['course1', 'course2', 'course3'];
   courselist;
   imageURL =

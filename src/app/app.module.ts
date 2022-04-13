@@ -8,9 +8,18 @@ import { CoursesComponenet } from './courses.component';
 import { CoursesService } from './courses.service';
 import { SummaryPipe } from './summary.pipe';
 import { TestComponent } from './test/test.component';
+import { DirectivesComponent } from './directives/directives.component';
+import { TitleCasePipe } from './title-case.pipe';
 
 @NgModule({
-  declarations: [AppComponent, CoursesComponenet, TestComponent, SummaryPipe], // all components that are part of this module
+  declarations: [
+    AppComponent,
+    CoursesComponenet,
+    TestComponent,
+    SummaryPipe,
+    DirectivesComponent,
+    TitleCasePipe,
+  ], // all components that are part of this module
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [CoursesService],
   bootstrap: [AppComponent],
