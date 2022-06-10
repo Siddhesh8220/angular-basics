@@ -1,2 +1,18 @@
-<h1>Angular</h1>
-<courses></courses>
+<!-- <h1>Angular</h1>
+<courses></courses> -->
+<!-- <directives></directives> -->
+
+<!--passing data as $event-->
+<!-- Input and output property binding -->
+<favourite
+  [isFavourite]="post.isFavourite"
+  (changes)="onFavChange($event)"
+></favourite>
+
+<bootstrap-panel>
+  <div class="heading">Heading</div>
+  <div class="body">
+    <p>body</p>
+    <p>Some content here...</p>
+  </div>
+</bootstrap-panel>

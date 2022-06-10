@@ -8,10 +8,11 @@ import { CoursesService } from './courses.service';
     <h4>Custom Pipe: {{ summaryText | summary }}</h4>
     <ul>
       <li *ngFor="let course of courselist">{{ course }}</li>
-      <!-- property binding works one way -->
+      <!-- property binding works one way(binding dom properties) -->
     </ul>
     <img [src]="imageURL" />
     <img src="{{ imageURL }}" />
+    <!-- Attribute binding(for binding html attributes which are no part of a DOM) -->
     <table>
       <tr>
         <td [attr.colspan]="colSpan">Hello</td>
@@ -72,6 +73,7 @@ export class CoursesComponenet {
   }
 
   onKeyUp(email?: any) {
+    // no need to pass event object and print values using event.target.value
     console.log('Enter key is pressed  & ' + 'email is: ' + email);
   }
 

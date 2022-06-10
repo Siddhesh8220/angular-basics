@@ -1,0 +1,2 @@
+1. Angular uses Emulation of shadow dom to reder styles for the templates
+2. Shadow dom is not supported by all the browsers, plus it can performace issues.
