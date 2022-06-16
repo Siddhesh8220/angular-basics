@@ -7,7 +7,14 @@ import { FavouriteChangedEventArgs } from './favourite/favourite.component';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  viewMode = 'map';
   title = 'hello-angular';
+  courses = [];
+  ngForList = [
+    { id: 1, name: 'course1' },
+    { id: 1, name: 'course2' },
+    { id: 1, name: 'course3' },
+  ];
   post = {
     title: 'Title',
     isFavourite: true,
