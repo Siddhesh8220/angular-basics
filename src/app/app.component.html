@@ -4,12 +4,13 @@
 
 <!--passing data as $event-->
 <!-- Input and output property binding -->
-<!-- <favourite
+
+<favourite
   [isFavourite]="post.isFavourite"
   (changes)="onFavChange($event)"
 ></favourite>
 
-<bootstrap-panel>
+<!-- <bootstrap-panel>
   <div class="heading">Heading</div>
   <div class="body">
     <p>body</p>
@@ -46,11 +47,38 @@
   <div *ngSwitchDefault>Otherwise</div>
 </div>
 
-<!--ngForList-->
+<!--ngFor-->
+<button (click)="add()">add</button>
 <ul>
   <!--ngForOf: in html we use ngFor-->
   <li *ngFor="let course of ngForList; index as i; even as isEven">
     {{ i }} - {{ course.name }}
     <span *ngIf="isEven">(EVEN)</span>
+    <button (click)="onChange(course)">update</button>
   </li>
 </ul>
+<button (click)="loadCourses()">LoadCousers2</button>
+<!--trackBy stop rerendering of the elements if there is no chnage-->
+<ul>
+  <li *ngFor="let course of ngForList2; trackBy: trackCourse">
+    {{ course.name }}
+  </li>
+</ul>
+
+<!--ngClass: added in favourite component-->
+<!--It simplify syntax with multiple class bindings-->
+
+<!--[ngStyle]-->
+<button
+  [ngStyle]="{
+    backgroundColor: canSave ? 'blue' : 'grey',
+    color: canSave ? 'white' : 'black'
+  }"
+>
+  ngStyle
+</button>
+
+<!--Safe traversal Operator: Not working in here need some research-->
+<span>{{ task.assignee?.name }}</span>
+
+<input type=" text" appInputFormat [format]="'uppercase'" />

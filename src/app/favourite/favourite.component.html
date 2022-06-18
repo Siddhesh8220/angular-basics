@@ -1,6 +1,16 @@
-<i
+<!-- <i
   class="fa"
   [class.fa-star]="isFavourite"
   [class.fa-star-o]="!isFavourite"
+  (click)="onClick()"
+></i> -->
+
+<!--simplify using ngClass-->
+<i
+  class="fa"
+  [ngClass]="{
+    'fa-star': isFavourite,
+    'fa-star-o': !isFavourite
+  }"
   (click)="onClick()"
 ></i>
